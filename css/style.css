@@ -1,0 +1,95 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+body, html{
+    height: 100%;
+    margin: 0;
+    font-size: 16px;
+    font-family: "Lato" , sans-serif;
+    font-weight: 400;
+    line-height: 1.8em;
+    color: #666;
+}
+
+.pimg1, .pimg2, .pimg3{
+    /* 三個都固定在自己的區塊，不會疊再一起 */
+    position: relative;
+    /* 不透明度 */
+    opacity: 0.70;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    /* scroll:預設值，背景圖會隨著外圍頁面滾動而移動
+    fixed:不管外面、裡面怎麼滾，他都是不會動的 */
+    background-attachment: fixed;
+}
+
+.pimg1{
+    background-image: url('../img/image1.jpg');
+    min-height: 100%;
+}
+
+.pimg2{
+    background-image: url('../img/image2.jpg');
+    /* 高度只會顯示400px不會滿版 */
+    min-height: 400px;
+}
+
+.pimg3{
+    background-image: url('../img/image3.jpg');
+    min-height: 400px;
+}
+
+.section{
+    text-align: center;
+    padding: 50px 80px;
+}
+
+.section-light{
+    background-color: #f4f4f4;
+    color: #666;
+}
+
+.section-drak{
+    background-color: #282e34;
+    color: #ddd;
+}
+
+.ptext{
+    /* 固定位置 */
+    position: absolute;
+    top: 50%;
+    /* 讓ptext跟版面一樣大小 */
+    width: 100%;
+    text-align: center;
+    color: #000;
+    font-size: 27px;
+    /* 字體間距 */
+    letter-spacing: 8px;
+    text-transform: uppercase;
+
+}
+
+.ptext .border{
+    background-color: #111;
+    color: #fff;
+    padding: 20px;
+}
+
+/* .ptext底下有.border跟.trans兩個class的 */
+.ptext .border.trans{
+    background-color: transparent;
+}
+
+@media(max-width:568px){
+    /* Parallax website會疊在一起 */
+    .ptext{
+        display: flex;
+    }
+    /* 小視窗時Parallax website一樣置中 */
+    .ptext .border{
+        width: 100%
+    }
+}
